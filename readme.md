@@ -14,7 +14,14 @@ Instantiate a new Angular module called `BlogPost` that takes `ui.router` as a d
 
 **Your answer:**
 ```js
+"use strict";
 
+(function(){
+  angular
+  .module("BlogPost", [
+    "ui.router"
+  ]);
+}());
 ```
 
 ## Question 2
@@ -30,7 +37,7 @@ Which *one* of the following buttons would *not* be displayed?
 ```html
 [ ] A: <button data-ng-if="status">Click</button>
 [ ] B: <button data-ng-show="status">Click</button>
-[ ] C: <button data-ng-hide="status">Click</button>
+[x] C: <button data-ng-hide="status">Click</button>
 [ ] D: <button>{{status}}</button>
 ```
 
@@ -45,7 +52,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 **Your answer:**
 
-> ...
+> There's no difference in terms of functionality. It only affects whether the HTML will validate: the second is valid HTML, the first is not.
 
 ## Question 4
 
@@ -53,7 +60,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 
 **Your answer:**
 
-> ...
+> **A** is the most correct. The `ng-app` directive should be attached to an element that contains all other Angular directives.
 
 ### A:
 ```html
@@ -106,7 +113,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -116,7 +123,7 @@ What is an IIFE, and why might you use it?
 
 **Your answer:**
 
-> ...
+> An Immediately-Invoked Function Expression is a function that calls itself as soon as it's defined, and then isn't called again. It's useful because of closure: variables defined inside it won't exist outside it, and so can't clutter the global scope.
 
 ## Question 7
 
@@ -124,7 +131,7 @@ What is the `ui-sref` directive, and how is it used?
 
 **Your answer:**
 
-> ...
+> The `s` in `sref` stands for "state". An Angular state is a URL with an attached template and controller. `ui-sref` is used to dynamically generate links to different states.
 
 ## Question 8
 
@@ -132,7 +139,7 @@ One of the lines of code in the following snippet will throw an error. Which one
 
 **Your answer:**
 
-> ...
+> Line 3 will throw an error. `use strict` prevents you from using any variables without declaring them first with `var`. `i` hasn't been declared.
 
 ```js
 /*1*/ "use strict";
@@ -151,7 +158,13 @@ Custom directives can be embedded in HTML four different ways. Demonstrate **two
 
 **Your answer:**
 ```html
+<my-directive></my-directive>
 
+<div data-my-directive></div>
+
+<div class="my-directive"></div>
+
+<!-- directive:my-directive -->
 ```
 
 ## Question 10
@@ -160,7 +173,9 @@ Of the three following options, which is the most "correct" way of organizing th
 
 **Your answer:**
 
-> ...
+> **B** is correct. Angular is made up of templates and components that are very closely-linked. In this layout, related components are listed right next to each other in alphabetical order.
+
+> `A` and `C` would require a lot of jumping from folder to folder because they don't reflect the intertwinedness of HTML and JS in Angular. `C` does not reflect the "one view, one controller" paradigm.
 
 
 ### A:
