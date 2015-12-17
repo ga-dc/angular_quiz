@@ -51,14 +51,16 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 ```
 
 **Your answer:**
-It doesn't affect them. It only affects whether the HTML will validate: the second will, the first will not.
+
+> It doesn't affect them. It only affects whether the HTML will validate: the second will, the first will not.
 
 ## Question 4
 
 Which of the following is the most correct? **Explain your answer.**
 
 **Your answer:**
-**A** is the most correct. The `ng-app` directive should be attached to an element that contains all other Angular directives.
+
+> **A** is the most correct. The `ng-app` directive should be attached to an element that contains all other Angular directives.
 
 ### A:
 ```html
@@ -117,21 +119,24 @@ Which one of the following concepts does this best illustrate?
 What is an IIFE, and why do we use them?
 
 **Your answer:**
-An Immediately-Invoked Function Expression is a function that calls itself as soon as it's defined, and then isn't called again. It's useful because of closure: variables defined inside it won't exist outside it, and so can't clutter the global scope.
+
+> An Immediately-Invoked Function Expression is a function that calls itself as soon as it's defined, and then isn't called again. It's useful because of closure: variables defined inside it won't exist outside it, and so can't clutter the global scope.
 
 ## Question 7
 
 What is the `ui-sref` directive, and how is it used?
 
 **Your answer:**
-The `s` in `sref` stands for "state". An Angular state is a URL with an attached template and controller. `ui-sref` is used to dynamically generate links to different states.
+
+> The `s` in `sref` stands for "state". An Angular state is a URL with an attached template and controller. `ui-sref` is used to dynamically generate links to different states.
 
 ## Question 8
 
 Which line in the following code snippet will throw an error? **Explain your answer.**
 
 **Your answer:**
-Line 3 will throw an error. `use strict` prevents you from using any variables without declaring them first with `var`. `i` hasn't been declared.
+
+> Line 3 will throw an error. `use strict` prevents you from using any variables without declaring them first with `var`. `i` hasn't been declared.
 
 ```js
 /*1*/ "use strict";
@@ -164,9 +169,10 @@ You have defined a custom directive called called `my-directive`. You can includ
 Of the three following options, which is the most "correct" way of organizing the files that make up an Angular app? Why is this option considered "better" than the other two?
 
 **Your answer:**
-**B** is correct. Angular is made up of templates and components that are very closely-linked. In this layout, related components are listed right next to each other in alphabetical order.
 
-**A** and **C** would require a lot of jumping from folder to folder because they don't reflect the intertwinedness of HTML and JS in Angular. **C** does not reflect the "one view, one controller" paradigm.
+> **B** is correct. Angular is made up of templates and components that are very closely-linked. In this layout, related components are listed right next to each other in alphabetical order.
+
+> **A** and **C** would require a lot of jumping from folder to folder because they don't reflect the intertwinedness of HTML and JS in Angular. **C** does not reflect the "one view, one controller" paradigm.
 
 ### A:
 ```
