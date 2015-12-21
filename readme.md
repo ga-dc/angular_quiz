@@ -14,7 +14,12 @@ Instantiate a new Angular module called `BlogPost` that takes `ui.router` as a d
 
 **Your answer:**
 ```js
-
+(function(){
+  angular
+  .module("BlogPost", [
+    "ui.router"
+  ])
+});
 ```
 
 ## Question 2
@@ -30,7 +35,7 @@ Which *one* of the following buttons would *not* be displayed?
 ```html
 [ ] A: <button data-ng-if="status">Click</button>
 [ ] B: <button data-ng-show="status">Click</button>
-[ ] C: <button data-ng-hide="status">Click</button>
+[X] C: <button data-ng-hide="status">Click</button>
 [ ] D: <button>{{status}}</button>
 ```
 
@@ -45,7 +50,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 **Your answer:**
 
-> ...
+When run through an html validator, the first one will not pass and the second one will.
 
 ## Question 4
 
@@ -53,7 +58,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 
 **Your answer:**
 
-> ...
+Option A demonstrates the best usage of data-ng-app because data-ng-app defines the entire application. Angular is modular so declaring data-ng-app inside an element means everything inside that element would be a part of the app. We want to use it inside the html or body tags to encompass the whole app. If we only used it inside the head or div tag, it would leave out many elements and they would not be connected to the appropriate dependencies, directives, controllers, etc.
 
 ### A:
 ```html
@@ -72,7 +77,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### B:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head data-ng-app="myapp">
     <title>My app</title>
   </head>
@@ -86,7 +91,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### C:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <title>My app</title>
   </head>
@@ -106,7 +111,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -116,7 +121,7 @@ What is an IIFE, and why might you use it?
 
 **Your answer:**
 
-> ...
+An IIFE is an Immediately Invoked Function Expression. According to John Papa's Style Guide, using an IIFE removes variables from the global scope and places them inside the local scope of that IIFE. This gives speed and helps us avoid variables collisions.  
 
 ## Question 7
 
@@ -124,7 +129,13 @@ What is the `ui-sref` directive, and how is it used?
 
 **Your answer:**
 
-> ...
+The "ui-sref" directive links the <a> tag to a state that's in your router. Clicking a link with that directive will take you to the state and update the href attribute as well.
+
+Example of how it's used:
+
+```js
+<a data-ui-sref="songIndex">WDI Radio</a>
+```
 
 ## Question 8
 
@@ -132,7 +143,7 @@ One of the lines of code in the following snippet will throw an error. Which one
 
 **Your answer:**
 
-> ...
+Line 3 will throw an error because using the expression "use strict" will require that all variables be declared. "i = 3" needs to be "var i = 3".
 
 ```js
 /*1*/ "use strict";
@@ -151,7 +162,8 @@ Custom directives can be embedded in HTML four different ways. Demonstrate **two
 
 **Your answer:**
 ```html
-
+As an element: <my-directive></my-directive>
+As an attribute: <div my-directive></div>
 ```
 
 ## Question 10
@@ -160,8 +172,7 @@ Of the three following options, which is the most "correct" way of organizing th
 
 **Your answer:**
 
-> ...
-
+Option B would be best because it promotes Angular's modularity by grouping the files based on the app's functionality. See the last quiz's answer for more details.
 
 ### A:
 ```
@@ -212,4 +223,3 @@ Of the three following options, which is the most "correct" way of organizing th
   songs/
     form.html
 ```
-
