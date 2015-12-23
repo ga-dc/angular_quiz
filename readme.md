@@ -14,7 +14,12 @@ Instantiate a new Angular module called `BlogPost` that takes `ui.router` as a d
 
 **Your answer:**
 ```js
-
+(function(){
+  angular
+  .module("BlogPost", [
+    ".ui-router"
+  ])
+})
 ```
 
 ## Question 2
@@ -45,7 +50,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 **Your answer:**
 
-> ...
+> data-ng-click is valid HTML (will pass a validator test) while ng-click is not valid HTML
 
 ## Question 4
 
@@ -53,7 +58,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 
 **Your answer:**
 
-> ...
+> Option "A" is the best usage of ng-app, because it instantiates the module "myapp" throughout the entire html page.
 
 ### A:
 ```html
@@ -72,7 +77,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### B:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head data-ng-app="myapp">
     <title>My app</title>
   </head>
@@ -86,7 +91,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### C:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <title>My app</title>
   </head>
@@ -106,7 +111,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[x] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -116,7 +121,7 @@ What is an IIFE, and why might you use it?
 
 **Your answer:**
 
-> ...
+> An IIFE is an immediately invoked function - a function that executes immediately after it is created. 
 
 ## Question 7
 
@@ -212,4 +217,3 @@ Of the three following options, which is the most "correct" way of organizing th
   songs/
     form.html
 ```
-
