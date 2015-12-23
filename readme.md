@@ -35,7 +35,7 @@ Which *one* of the following buttons would *not* be displayed?
 ```html
 [ ] A: <button data-ng-if="status">Click</button>
 [ ] B: <button data-ng-show="status">Click</button>
-[ ] C: <button data-ng-hide="status">Click</button>
+[X] C: <button data-ng-hide="status">Click</button>
 [ ] D: <button>{{status}}</button>
 ```
 
@@ -58,7 +58,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 
 **Your answer:**
 
-> Option "A" is the best usage of ng-app, because it instantiates the module "myapp" throughout the entire html page.
+> Option "A" is the best usage of ng-app, because it instantiates the module "myapp" throughout the entire html page. There can only be one instance of it, so including at the very top of HTML ensures it will be applied in every sub html element.
 
 ### A:
 ```html
@@ -121,7 +121,7 @@ What is an IIFE, and why might you use it?
 
 **Your answer:**
 
-> An IIFE is an immediately invoked function - a function that executes immediately after it is created. 
+> An IIFE is an immediately invoked function - a function that executes immediately after it is created.
 
 ## Question 7
 
@@ -129,7 +129,7 @@ What is the `ui-sref` directive, and how is it used?
 
 **Your answer:**
 
-> ...
+> ui-sref directive is a helper method given to us by Angular. It allows us to link different states urls. It also allows us to use things like the item id as an argument for ui-sref, and be directed to that id page.
 
 ## Question 8
 
@@ -137,7 +137,7 @@ One of the lines of code in the following snippet will throw an error. Which one
 
 **Your answer:**
 
-> ...
+> Line 3 will throw an error because "use-strict" forces us to write "better" JS by declaring all variables before using them. In line 3 we'd need to declare var i = 1 for this to be valid code.
 
 ```js
 /*1*/ "use strict";
@@ -156,7 +156,8 @@ Custom directives can be embedded in HTML four different ways. Demonstrate **two
 
 **Your answer:**
 ```html
-
+<my-directive></my-directive>
+<div data-my-directive></div>
 ```
 
 ## Question 10
@@ -165,7 +166,7 @@ Of the three following options, which is the most "correct" way of organizing th
 
 **Your answer:**
 
-> ...
+> Option B is the most correct way of organizing an Angular app. It's better because it is keeping our models in separate folders (except form_controller should maybe be in forms folder?) making it easier to see how the app is related.
 
 
 ### A:
