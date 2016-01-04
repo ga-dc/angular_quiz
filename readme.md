@@ -14,7 +14,12 @@ Instantiate a new Angular module called `BlogPost` that takes `ui.router` as a d
 
 **Your answer:**
 ```js
-
+(function () {
+  angular
+  .module("BlogPost", [
+    "ui.router"
+  ]);
+})();
 ```
 
 ## Question 2
@@ -30,7 +35,7 @@ Which *one* of the following buttons would *not* be displayed?
 ```html
 [ ] A: <button data-ng-if="status">Click</button>
 [ ] B: <button data-ng-show="status">Click</button>
-[ ] C: <button data-ng-hide="status">Click</button>
+[X] C: <button data-ng-hide="status">Click</button>
 [ ] D: <button>{{status}}</button>
 ```
 
@@ -45,7 +50,7 @@ One button below has an `ng-click` attribute; the other has `data-ng-click` inst
 
 **Your answer:**
 
-> ...
+> The `data-` prefix allows the HTML to validate, because without it, Angular directives will throw an error in an HTML validator.
 
 ## Question 4
 
@@ -53,7 +58,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 
 **Your answer:**
 
-> ...
+> `A` is the best option, because `ng-app` defines the scope in which our Angular app can operate on the page and can only do so once. Option B has `ng-app` available in the head, which means none of the Angular directives in the body will appear, and option C would have only that one div operational in the Angular app.
 
 ### A:
 ```html
@@ -72,7 +77,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### B:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head data-ng-app="myapp">
     <title>My app</title>
   </head>
@@ -86,7 +91,7 @@ Which of the following demonstrates the best usage of `ng-app`? **Explain your a
 ### C:
 ```html
 <!DOCTYPE html>
-<html> 
+<html>
   <head>
     <title>My app</title>
   </head>
@@ -106,7 +111,7 @@ Which one of the following concepts does this best illustrate?
 ```
 [ ] A: Modularity
 [ ] B: MVC
-[ ] C: Two-way data-binding
+[X] C: Two-way data-binding
 [ ] D: Separation of concerns
 ```
 
@@ -116,7 +121,7 @@ What is an IIFE, and why might you use it?
 
 **Your answer:**
 
-> ...
+> An IIFE is an immediately-invoked function expression, and it is used in order to provide and then immediately close the scope of the function so that the global scope stays clear.
 
 ## Question 7
 
@@ -124,7 +129,7 @@ What is the `ui-sref` directive, and how is it used?
 
 **Your answer:**
 
-> ...
+> The `ui-sref` directive is checking for a different state that would previously have been defined in the controller. It is a way of linking information from different states on a page.
 
 ## Question 8
 
@@ -132,7 +137,7 @@ One of the lines of code in the following snippet will throw an error. Which one
 
 **Your answer:**
 
-> ...
+> Line 3 will throw an error because under strict JavaScript rules, every variable needs to be clearly defined as "var x = ..." and the variable `i` in the loop is not defined this way.
 
 ```js
 /*1*/ "use strict";
@@ -150,8 +155,11 @@ One of the lines of code in the following snippet will throw an error. Which one
 Custom directives can be embedded in HTML four different ways. Demonstrate **two** of these four with a directive called `my-directive`. (Hint: "MACE")
 
 **Your answer:**
+> Do you one better and give you 3?
 ```html
-
+<my-directive></my-directive>
+<div data-my-directive></div>
+<div class="my-directive"></div>
 ```
 
 ## Question 10
@@ -160,7 +168,7 @@ Of the three following options, which is the most "correct" way of organizing th
 
 **Your answer:**
 
-> ...
+> Option `B` is best because it separates the files by models (artists and songs), which makes it easy to see each one's respective controllers, custom directives, etc. It's the broadest separation of concerns that is still practical for our app.
 
 
 ### A:
@@ -212,4 +220,3 @@ Of the three following options, which is the most "correct" way of organizing th
   songs/
     form.html
 ```
-
